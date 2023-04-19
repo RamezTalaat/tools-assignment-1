@@ -241,6 +241,13 @@
             <failsOnError>true</failsOnError>
             <failOnViolation>true</failOnViolation>
           </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>org.wildfly.checkstyle</groupId>
+              <artifactId>wildfly-checkstyle-config</artifactId>
+              <version>${version.org.wildfly.checkstyle-config}</version>
+            </dependency>
+          </dependencies>
           
         </plugin>
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
