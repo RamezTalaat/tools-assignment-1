@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Title: enterprise-java-task
+Implementation-Version: 1.0
+Java-Version: 1.8.0_131
+Built-By: student
+Scm-Connection: scm:git:git@github.com:jboss/jboss-parent-pom.git/ente
+ rprise-java-task
+Specification-Vendor: JBoss by Red Hat
+Os-Arch: amd64
+Specification-Title: enterprise-java-task
+Implementation-Vendor-Id: com.lab.task
+Java-Vendor: Oracle Corporation
+Os-Name: Linux
+Scm-Url: http://github.com/jboss/jboss-parent-pom/enterprise-java-task
+Implementation-Vendor: JBoss by Red Hat
+Os-Version: 3.10.0-693.el7.x86_64
+Scm-Revision: 
+Build-Jdk: 1.8.0_131
+Specification-Version: 1.0
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://www.jboss.org/enterprise-java-task
+
