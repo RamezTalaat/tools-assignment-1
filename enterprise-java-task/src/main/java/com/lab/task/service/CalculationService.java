@@ -23,6 +23,8 @@ import com.lab.task.repo.DbController;
 public class CalculationService {
     @Inject
     private CalculationRepo repo;
+    @Inject
+    private DbController db;
 
     public CalculationService() {
     }
@@ -63,7 +65,6 @@ public class CalculationService {
     @Path("myCalc")
     @POST
     public Result makeCalc(Equation equation) {
-    	DbController db = new DbController();
     	int result;
     	switch (equation.getOperation()) {
         case "+":
