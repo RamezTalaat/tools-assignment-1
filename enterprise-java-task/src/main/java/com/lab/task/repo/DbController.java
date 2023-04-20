@@ -20,6 +20,6 @@ public class DbController {
 	}
 	
 	public List<Equation> getEquations() {
-        return entityManager.createQuery("select c from Equation c", Equation.class).getResultList();
+        return entityManager.createQuery("select e from Equation e", Equation.class).getResultList();
     }
 }

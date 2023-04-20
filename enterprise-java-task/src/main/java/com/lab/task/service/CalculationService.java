@@ -21,50 +21,22 @@ import com.lab.task.repo.DbController;
 @RequestScoped
 @Path("/")
 public class CalculationService {
-    @Inject
-    private CalculationRepo repo;
+    
     @Inject
     private DbController db;
 
     public CalculationService() {
     }
 
-    @Path("calc")
-    @POST
-    public Result calculate(Calculation calculation) {
-        int result;
-        switch (calculation.getOperation()) {
-            case "+":
-                result = calculation.getNumber1() + calculation.getNumber2();
-                break;
-            case "-":
-                result = calculation.getNumber1() - calculation.getNumber2();
-                break;
-            case "*":
-                result = calculation.getNumber1() * calculation.getNumber2();
-                break;
-            case "/": {
-                if (calculation.getNumber2() == 0)
-                    throw new IllegalArgumentException("Can't divide by zero");
-                result = calculation.getNumber1() / calculation.getNumber2();
-                break;
-            }
-            default:
-                throw new IllegalArgumentException("Unsupported operation");
-        }
-        repo.insert(calculation);
-        return new Result(result);
-    }
-
     @Path("calculations")
     @GET
-    public List<Calculation> getAllCalculations() {
+    public List<Equation> getCalculations() {
         return repo.selectAll();
     }
     
-    @Path("myCalc")
+    @Path("calc")
     @POST
-    public Result makeCalc(Equation equation) {
+    public Result createCalculation(Equation equation) {
     	int result;
     	switch (equation.getOperation()) {
         case "+":
@@ -89,14 +61,4 @@ public class CalculationService {
     return new Result(result);
     }
 
-    @Path("/")
-    @GET
-    public String getHealth() {
-        return "Up and running";
-    }
-    @Path("hi")
-    @GET
-    public String sayHi() {
-        return "HI";
-    }
 }
