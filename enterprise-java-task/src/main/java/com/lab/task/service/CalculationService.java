@@ -11,9 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.lab.task.model.Calculation;
 import com.lab.task.model.Equation;
-import com.lab.task.repo.CalculationRepo;
 import com.lab.task.repo.DbController;
 
 @Consumes(MediaType.APPLICATION_JSON)
@@ -31,7 +29,7 @@ public class CalculationService {
     @Path("calculations")
     @GET
     public List<Equation> getCalculations() {
-        return repo.selectAll();
+        return db.getEquations();
     }
     
     @Path("calc")
